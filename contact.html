@@ -43,6 +43,10 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn " style="color: lightblue;" type="submit">Search</button>
       </form>
+      <div class="cart-icon" style="position: relative; margin-left: 20px;">
+        <i class="fas fa-shopping-cart" style="color: lightblue; font-size: 24px;"></i>
+        <span id="cart-count" style="position: absolute; top: -10px; right: -10px; background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px;">0</span>
+      </div>
     </div>
   </div>
 </nav>
@@ -130,6 +134,13 @@
     </div>
   </footer>
 
-
+<script>
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(product + ' added to cart!');
+}
+</script>
 </body>
 </html>

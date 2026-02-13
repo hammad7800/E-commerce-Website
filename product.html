@@ -43,6 +43,10 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn " style="color: lightblue;" type="submit">Search</button>
       </form>
+      <div class="cart-icon" style="position: relative; margin-left: 20px;">
+        <i class="fas fa-shopping-cart" style="color: lightblue; font-size: 24px;"></i>
+        <span id="cart-count" style="position: absolute; top: -10px; right: -10px; background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px;">0</span>
+      </div>
     </div>
   </div>
 </nav>
@@ -67,7 +71,7 @@
   <div class="card-body">
     <h5 class="card-title">Washing Wear Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black; " >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;" onclick="addToCart({name: 'Washing Wear Fabric', price: 20})">Add To Cart</a>
   </div>
 </div>
 
@@ -76,7 +80,7 @@
   <div class="card-body">
     <h5 class="card-title">Cotton Wear Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 
@@ -85,7 +89,7 @@
   <div class="card-body">
     <h5 class="card-title">Soft Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
@@ -93,7 +97,7 @@
   <div class="card-body">
     <h5 class="card-title">Comfortable Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 </div>
@@ -110,7 +114,7 @@
   <div class="card-body">
     <h5 class="card-title">Washing Wear Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 
@@ -119,7 +123,7 @@
   <div class="card-body">
     <h5 class="card-title">Cotton Wear Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 
@@ -128,7 +132,7 @@
   <div class="card-body">
     <h5 class="card-title">Soft Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
@@ -136,7 +140,7 @@
   <div class="card-body">
     <h5 class="card-title">Comfortable Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 </div>
@@ -150,7 +154,7 @@
   <div class="card-body">
     <h5 class="card-title">Washing Wear Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 
@@ -159,7 +163,7 @@
   <div class="card-body">
     <h5 class="card-title">Cotton Wear Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 
@@ -168,7 +172,7 @@
   <div class="card-body">
     <h5 class="card-title">Soft Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
@@ -176,7 +180,7 @@
   <div class="card-body">
     <h5 class="card-title">Comfortable Fabric</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 </div>
@@ -191,7 +195,7 @@
   <div class="card-body">
     <h5 class="card-title">Causal Shoes</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 
@@ -200,7 +204,7 @@
   <div class="card-body">
     <h5 class="card-title">Joggers Shoes</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 
@@ -209,7 +213,7 @@
   <div class="card-body">
     <h5 class="card-title">Comfortable Shoes</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
@@ -217,7 +221,7 @@
   <div class="card-body">
     <h5 class="card-title">Jogging Shoes</h5>
     <p class="card-text">Experience unmatched comfort with our premium washing wear fabric - perfect for everyday wear and built to last.</p>
-    <a href="#" class="btn" style="color: skyblue; background-color: black;" >Add To Cart</a>
+    <a href="#" class="btn" style="color: skyblue; background-color: black;">Add To Cart</a>
   </div>
 </div>
 </div>
@@ -278,6 +282,55 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- Floating Cart Icon -->
+<div class="floating-cart" id="floatingCart" onclick="window.location.href='cart.html'">
+  <i class="fas fa-shopping-cart"></i>
+</div>
+
+<script>
+// Floating cart scroll behavior
+window.addEventListener('scroll', function() {
+  const floatingCart = document.getElementById('floatingCart');
+  if (window.scrollY > 200) {
+    floatingCart.classList.add('show');
+  } else {
+    floatingCart.classList.remove('show');
+  }
+});
+
+// Fade-in animations on load
+document.addEventListener('DOMContentLoaded', function() {
+  const elements = document.querySelectorAll('.card, .heading, .para, .head, .head1');
+  elements.forEach((el, index) => {
+    el.classList.add('fade-in');
+    if (index < 3) {
+      el.classList.add(`delay-${index + 1}`);
+    }
+  });
+});
+
+function addToCart(item) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(item);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(item.name + ' added to cart!');
+    updateCartCount();
+}
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateCartCount();
+});
+</script>
+
 </body>
 </html>

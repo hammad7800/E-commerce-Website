@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - NOVA ATTIRE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body style="background-color: black;">
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid" style="background-color: black; padding: 5px; position:fixed; margin-top: 40px;">
+            <a class="navbar-brand" style="font-size: x-large; color: lightblue; font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif;" href="#">NOVA ATTIRE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 250px;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap: 40px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: lightblue; font-family: Georgia, 'Times New Roman', Times, serif;" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: lightblue;" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: lightblue;" aria-current="page" href="product.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: lightblue;" aria-current="page" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color: lightblue;" aria-current="page" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <button class="btn" style="color: lightblue;" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="cart-section" style="margin-top: 100px; padding: 20px;">
+        <h1 style="color: lightblue; text-align: center; margin-bottom: 30px;">Your Cart</h1>
+        <div id="cart-items" style="max-width: 800px; margin: 0 auto;">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div id="empty-cart" style="text-align: center; color: lightblue; display: none;">
+            <p>Your cart is empty.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Nova Attire</h2>
+            </div>
+            <div class="footer-links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>Email: info@mycompany.com</p>
+                <p>Phone: +92 332 387 3261</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="home.html"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <br><hr>
+            <p style="text-align: center;">&copy; 2025 MyCompany. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsDiv = document.getElementById('cart-items');
+            const emptyCartDiv = document.getElementById('empty-cart');
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '';
+                emptyCartDiv.style.display = 'block';
+                return;
+            }
+
+            emptyCartDiv.style.display = 'none';
+            cartItemsDiv.innerHTML = '';
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'card slide-in';
+                itemDiv.style = 'margin: 10px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 15px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); animation-delay: ${index * 0.2}s;';
+                itemDiv.innerHTML = `
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: white;">${item.name} - $${item.price}</h5>
+                        <button class="btn" style="color: skyblue; background-color: black;" onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+                total += item.price;
+            });
+
+            // Add total
+            const totalDiv = document.createElement('div');
+            totalDiv.style = 'text-align: center; color: lightblue; margin-top: 20px; font-size: 24px;';
+            totalDiv.innerHTML = `<strong>Total: $${total}</strong>`;
+            cartItemsDiv.appendChild(totalDiv);
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = document.getElementById('cart-count');
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCart();
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>
